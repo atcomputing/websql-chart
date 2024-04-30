@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: websql
+  annotations:
+    maintainer: "Guru the Great"
+    state: "In progress"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: websql-sql
+  template:
+    metadata:
+      labels:
+        pod: websql-sql
+        app: websql
+    spec:
+      containers:
+      - name: sqlcont
+        image: mysql:5.7
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysqlpw
+              key: password
+        volumeMounts:
+        - name: timezonehost
+          mountPath: /etc/localtime
+          readOnly: true
+        - name: dbspace
+          mountPath: /var/lib/mysql
+        - name: configuration
+          mountPath: /etc/mysql/mysql.conf.d
+      volumes:
+      - name: timezonehost
+        hostPath:
+          path: /etc/localtime
+      - name: dbspace
+        persistentVolumeClaim:
+          claimName: mysql-pvc
+      - name: configuration
+        configMap:
+          name: mysql-config
