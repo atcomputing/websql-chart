@@ -1,0 +1,36 @@
+name: Create Helm Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Helm
+      uses: azure/setup-helm@v1
+      with:
+        version: 'latest'
+
+    - name: Package Helm Charts
+      run: |
+        helm package websql
+        mkdir -p docs
+        mv *.tgz docs/
+
+    - name: Generate Helm Repository Index
+      run: helm repo index --url https://atcomputing.github.io/websql-charts --merge docs/index.yaml docs
+
+    - name: Commit Changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Update Helm repository"
+        git push
