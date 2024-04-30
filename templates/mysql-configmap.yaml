@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  labels:
+    app: websql
+data:
+  mysettings.cnf: |
+    [mysqld]
+    log-error=/tmp/mysqld.log
