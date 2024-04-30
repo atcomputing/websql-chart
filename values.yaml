@@ -1,8 +1,0 @@
-webservice:
-  replicacount: 3
-  service:
-    nodeport: 32123
-
-mysqlservice:
-  storage:
-    size: 100Mi
