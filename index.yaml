@@ -2,16 +2,16 @@ apiVersion: v1
 entries:
   websql:
   - apiVersion: v2
-    created: "2024-04-30T12:30:58.144771451Z"
+    created: "2024-05-03T07:05:55.214114237Z"
     description: A Helm chart for the WebSQL application
-    digest: 1c45dc11fe70d4c2b3e1f8c3fd7b9317d07323710314e54d8cbcec5cfa2a1c80
+    digest: a3e694fd7b0c2992a389348c57b7b846502eb73e992318293fe4d2c971e76b74
     name: websql
     type: application
     urls:
     - https://atcomputing.github.io/websql-charts/websql-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
-    created: "2024-04-30T12:30:58.145213864Z"
+    created: "2024-05-03T07:05:55.214688752Z"
     description: A Helm chart for the WebSQL application
     digest: 1c45dc11fe70d4c2b3e1f8c3fd7b9317d07323710314e54d8cbcec5cfa2a1c80
     name: websql
@@ -19,4 +19,4 @@ entries:
     urls:
     - https://atcomputing.github.io/websql-charts/docs/websql-1.1.0.tgz
     version: 1.1.0
-generated: "2024-04-30T12:30:58.144033716Z"
+generated: "2024-05-03T07:05:55.21319137Z"
