@@ -2,4 +2,6 @@ apiVersion: v2
 name: websql
 description: A Helm chart for the WebSQL application
 type: application
-version: 1.1.0
+version: 1.2.0
+appVersion: "1.1.0"
+icon: https://raw.githubusercontent.com/atcomputing/websql-charts/main/websql/logo.png
