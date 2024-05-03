@@ -21,9 +21,11 @@ jobs:
     - name: Package Helm Charts
       run: |
         helm package websql
+        mkdir -p docs
+        mv *.tgz docs/
 
     - name: Generate Helm Repository Index
-      run: helm repo index --url https://atcomputing.github.io/websql-charts .
+      run: helm repo index --url https://atcomputing.github.io/websql-charts --merge docs/index.yaml docs
 
     - name: Commit Changes
       run: |
