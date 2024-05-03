@@ -3,7 +3,7 @@ entries:
   websql:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2024-05-03T07:25:24.463196672Z"
+    created: "2024-05-03T07:28:22.591851018Z"
     description: A Helm chart for the WebSQL application
     digest: 48f0700ce22a00af296c1b167cbe905c2caf6fe649136d91244bd61ad8afbd63
     icon: https://raw.githubusercontent.com/atcomputing/websql-charts/main/websql/logo.png
@@ -12,4 +12,4 @@ entries:
     urls:
     - https://atcomputing.github.io/websql-charts/websql-1.2.0.tgz
     version: 1.2.0
-generated: "2024-05-03T07:25:24.462646193Z"
+generated: "2024-05-03T07:28:22.590719614Z"
